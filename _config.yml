@@ -113,11 +113,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Git Rich"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "A tech-driven community exploring autonomous driving, machine vision, and deep learning together."
+  location         : "Seoul, Korea"
+  email            : "smc9759@gmail.com" 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
