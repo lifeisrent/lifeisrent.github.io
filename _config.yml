@@ -113,9 +113,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "🍕 Code, Rain, and Pizza"
+  name             : "🔄 Fork Code. Fund Dreams."
   avatar           : "/assets/images/git-rich-logo.png"
-  bio              : "A tech-driven community exploring autonomous driving, machine vision, and deep learning together."
+  bio              : "A tech-driven community exploring AMR, machine vision, and DL together."
   location         : "Seoul, Korea"
   email            : "smc9759@gmail.com" 
   links:
