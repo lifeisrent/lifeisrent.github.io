@@ -19,7 +19,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Git Rich"
 title_separator          : "-"
-subtitle                 : "Commit to Value"
+subtitle                 : "🔄 Git Commit. Git Wealthy."
 name                     : "Tech Blog"
 description              : "AMR Algorithm, Machine Vision, Deep Learning Research Notes"
 url                      : "https://git-rich.github.io"
