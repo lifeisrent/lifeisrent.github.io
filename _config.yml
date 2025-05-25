@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "Git Rich"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/git-rich-logo.png"
   bio              : "A tech-driven community exploring autonomous driving, machine vision, and deep learning together."
   location         : "Seoul, Korea"
   email            : "smc9759@gmail.com" 
