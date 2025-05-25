@@ -17,9 +17,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Git Rich Blog"
+title                    : "Git Rich"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "🔄 Fork Code. Fund Dreams."
 name                     : "Your Name"
 description              : "AMR Algorithm, Machine Vision, Deep Learning Research Notes"
 url                      : "https://git-rich.github.io"
