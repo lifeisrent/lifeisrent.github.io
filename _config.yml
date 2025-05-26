@@ -319,8 +319,11 @@ defaults:
       type: posts
     values:
       layout: single
+      sidebar:
+        nav: main      
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
+
