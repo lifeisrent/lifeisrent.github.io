@@ -1,6 +1,8 @@
 ---
-title: "🛠️ 전처리 툴킷 소개: 이미지 품질 향상을 위한 인터랙티브 도구"
+title: "🛠️ 전처리 툴킷 소개"
 layout: single
+toc: true
+toc_label: "Toolkit Menu"
 author_profile: true
 read_time: true
 comments: true
