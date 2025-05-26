@@ -4,7 +4,11 @@ layout: archive
 permalink: /projects/deep-learning/planning/
 author_profile: true
 entries_layout: list
+category: planning
+toc: true
+toc_label: "Contents"
 ---
+
 
 딥러닝 프로젝트의 성패는 **데이터와 문제 정의**에서 결정된다고 해도 과언이 아니다.
 
