@@ -5,9 +5,6 @@ toc: true
 toc_label: "Toolkit Menu"
 header:
   image: /assets/images/header/image-edit.jpg
-  overlay_color: "#000"
-  overlay_filter: "0.4"
-  show_overlay_excerpt: false
 author_profile: true
 read_time: true
 comments: true
