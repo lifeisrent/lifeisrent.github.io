@@ -85,7 +85,7 @@ def apply_blur(method, ksize):
 ```
 🎚️ 커널 크기 슬라이더로 블러 강도 조정이 가능하다
 
-![Gaussian Blur 예시](/assets/images/2025/preprocessing/preprocessing-blur.png)
+![Gaussian Blur 예시](/assets/images/2025/preprocessing/preprocessing-gaussianblur.png)
 
 ✅ 4. Normalize
 
