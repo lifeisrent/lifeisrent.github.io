@@ -99,7 +99,7 @@ plt.show()
 ```
 📊 픽셀값을 0~1 범위로 조정한다 딥러닝 전처리에서 학습 안정화를 위해 사용된다
 
-![Normalize 예시](/assets/images/2025/preprocessing/preprocessing-normalize.png)
+![Normalize 예시](/assets/images/2025/preprocessing/preprocessing-normalization.png)
 
 🔧 주요 특징
 ✅ Colab에서 실행되는 인터랙티브 전처리 툴킷
