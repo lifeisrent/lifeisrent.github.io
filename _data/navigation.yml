@@ -1,4 +1,3 @@
-# main links
 main:
   - title: "Project"
     url: /projects/
@@ -8,23 +7,11 @@ main:
     children:
       - title: "1. 기획 & 데이터 설계"
         url: /projects/deep-learning/planning/
-
       - title: "2. 모델링 & 학습 평가"
         url: /projects/deep-learning/modeling/
-
       - title: "3. 배포 & 운영"
         url: /projects/deep-learning/deployment/
-
       - title: "기타"
-        url: /projects/deep-learning/etc/    
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
-
+        url: /projects/deep-learning/etc/
 
 
