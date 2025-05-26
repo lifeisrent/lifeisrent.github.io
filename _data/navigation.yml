@@ -12,6 +12,6 @@ main:
       - title: "3. 배포 & 운영"
         url: /projects/deep-learning/deployment/
       - title: "기타"
-        url: /projects/deep-learning/etc/
+        url: /projects/deep-learning/misc/
 
 
