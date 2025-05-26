@@ -1,3 +1,10 @@
+---
+title: "DAGM 기반 반도체 결함 검사"
+permalink: /projects/dagm-defect-detection
+layout: archive
+---
+
+
 # 🧠 프로젝트 소개: 반도체 결함 검출을 위한 딥러닝 모델 실습
 
 이 프로젝트는 **반도체 비전 검사 환경을 모사**한 이미지 데이터셋을 기반으로, 딥러닝 모델을 학습하고 성능을 시각화하는 것을 목표로 합니다.  
