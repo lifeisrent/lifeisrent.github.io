@@ -53,8 +53,8 @@ def apply_padding(padding_type):
     plt.axis('off')
     plt.show()
 ```
-라디오 버튼으로 다양한 패딩 타입을 선택할 수 있습니다.  
-예: Zero Padding, Edge Padding, Reflect Padding, Constant Padding 등
+라디오 버튼으로 패딩 타입을 선택할 수 있다.  
+타입: Zero Padding, Edge Padding, Reflect Padding, Constant Padding
 ![Padding 예시](/assets/images/2025/preprocessing/preprocessing-padding.png)
 
 
@@ -69,7 +69,7 @@ def update_brightness(factor):
     plt.axis('off')
     plt.show()
 ```
-🔘 스크롤바로 밝기 조절 가능 (0.1 ~ 2.0)
+🔘 스크롤바로 밝기 조절이 가능하다 (0.1 ~ 2.0)
 ![Brightness 조절 예시](/assets/images/2025/preprocessing/preprocessing-brightness.png)
 
 ✅ 3. Gaussian Blur
@@ -83,7 +83,7 @@ def apply_blur(method, ksize):
     plt.axis('off')
     plt.show()
 ```
-🎚️ 커널 크기 슬라이더로 블러 강도 조정
+🎚️ 커널 크기 슬라이더로 블러 강도 조정이 가능하다
 
 ![Gaussian Blur 예시](/assets/images/2025/preprocessing/preprocessing-blur.png)
 
@@ -97,7 +97,7 @@ plt.title("Normalized Image")
 plt.axis('off')
 plt.show()
 ```
-📊 픽셀값을 0~1 범위로 조정해 학습 안정화 가능
+📊 픽셀값을 0~1 범위로 조정한다 딥러닝 전처리에서 학습 안정화를 위해 사용된다
 
 ![Normalize 예시](/assets/images/2025/preprocessing/preprocessing-normalize.png)
 
