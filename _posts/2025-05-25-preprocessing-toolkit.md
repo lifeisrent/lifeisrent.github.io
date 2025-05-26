@@ -102,14 +102,11 @@ plt.show()
 ![Normalize 예시](/assets/images/2025/preprocessing/preprocessing-normalization.png)
 
 🔧 주요 특징
-✅ Colab에서 실행되는 인터랙티브 전처리 툴킷
+✅ Colab 환경에서 실행되어 현장 PC 사양에 관계없이 이미지 편집이 가능
 
-✅ ipywidgets 기반으로 슬라이더 / 라디오 버튼 등으로 파라미터 조절
+✅ Google Drive와 연동되어 대용량 이미지 데이터도 쉽게 활용 가능
 
-✅ 하나의 이미지에 다양한 전처리 기법을 직접 적용하고 비교 실험
-
-✅ DAGM 2007 등 반도체 결함 이미지에 바로 적용 가능
-
+✅ 압축파일을 직접 읽어와 업로드 시간과 용량 제한 문제를 최소화
 
 ---
 
