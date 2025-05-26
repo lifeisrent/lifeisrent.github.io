@@ -44,7 +44,7 @@
 
 ## 📁 데이터셋
 
-- [DAGM 2007 (Defect Class Dataset)](https://www.kaggle.com/datasets/mhskjelvareid/dagm-2007-competition-dataset-optical-inspection)
+- [DAGM 2007 (Defect Class Dataset)](https://conferences.mpi-inf.mpg.de/dagm/2007/prizes.html)
 - TBD: 새로운 고난이도 결함 이미지 데이터셋
 
 ---
