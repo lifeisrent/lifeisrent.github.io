@@ -1,7 +1,9 @@
 ---
 title: "DAGM 기반 반도체 결함 검사"
 permalink: /projects/dagm-defect-detection
-layout: archive
+layout: single
+toc: true
+toc_label: "Table of Contents"
 ---
 
 
