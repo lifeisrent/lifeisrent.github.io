@@ -2,6 +2,8 @@
 title: "프로젝트 소개"
 permalink: /projects/
 layout: single
+sidebar:
+  nav: main
 author_profile: false
 ---
 
