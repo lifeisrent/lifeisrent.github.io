@@ -51,4 +51,4 @@
 
 ## 👥 Contributors
 
-- Seungmin Lee 외 스터디 팀원
+- smLee , jhj1111, frozenreboot, ausudu 스터디 팀원
