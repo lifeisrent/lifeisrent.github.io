@@ -102,6 +102,7 @@ plt.show()
 ![Normalize 예시](/assets/images/2025/preprocessing/preprocessing-normalization.png)
 
 🔧 주요 특징
+
 ✅ Colab 환경에서 실행되어 현장 PC 사양에 관계없이 이미지 편집이 가능
 
 ✅ Google Drive와 연동되어 대용량 이미지 데이터도 쉽게 활용 가능
