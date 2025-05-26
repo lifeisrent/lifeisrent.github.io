@@ -327,3 +327,11 @@ defaults:
       share: true
       related: true
 
+  # 2. 모든 페이지(_pages 등 포함)에도 sidebar 적용
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      sidebar:
+        nav: main
