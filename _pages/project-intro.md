@@ -16,7 +16,7 @@ author_profile: false
 
 ## 🔍 주요 프로젝트
 
-### 1. DAGM 기반 반도체 결함 검사
+### 1. [DAGM 기반 반도체 결함 검사](/projects/dagm-defect-detection)
 - 머신비전 기반 이미지 전처리 및 CNN 분류
 - DAGM 2007 데이터셋 활용
 
