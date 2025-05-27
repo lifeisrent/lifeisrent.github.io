@@ -6,6 +6,7 @@ tags: [dataset, labeling, directory]
 layout: single
 toc: true
 toc_label: "Contents"
+permalink: /planning/data-structure-guidelines/
 ---
 
 ## 📌 개요
