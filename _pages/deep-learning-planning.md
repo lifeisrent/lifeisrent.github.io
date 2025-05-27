@@ -57,7 +57,8 @@ toc_label: "Contents"
 분류(Classification) 모델과 검출(Detection) 모델은 서로 다른 방식으로 데이터를 구성해야 한다.
 
 모델 구조에 따라 데이터 구성 방식이 어떻게 달라지는지 궁금하다면  
-➡️ [데이터 구성 가이드 포스트 보기](/planning/data-structure-guidelines/)
+➡️ [데이터 구성 가이드 포스트 보기](https://git-rich-club.github.io/planning/data-structure-guidelines/)
+
 
 ---
 
