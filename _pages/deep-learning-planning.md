@@ -115,7 +115,7 @@ datasets/
 
 ## 🦋 Augmentation의 필요성
 
-![곤충 분류 예시 - Augmentation 샘플](/assets/images/post_planning/augmentation-sample.png)
+![곤충 분류 예시 - Augmentation 샘플](/assets/images/2025/DLplanning/augmentation-sample.png)
 
 <small>
 출처: <a href="https://www.biorxiv.org/content/10.1101/2024.11.01.621497v1.full" target="_blank" rel="noopener noreferrer">
@@ -162,7 +162,7 @@ BioRxiv 논문: Augmentation for Insect Species Identification</a>
 
 ### 🖼️ 예시 이미지
 
-![Blur Example](/assets/images/post_planning/example-blur.jpg)
+![Blur Example](/assets/images/2025/DLplanning/example-blur.jpg)
 
 <small>
 출처: <a href="https://www.manula.com/manuals/fxhome/imerge-pro/2021.5/en/topic/blurs" target="_blank" rel="noopener noreferrer">
