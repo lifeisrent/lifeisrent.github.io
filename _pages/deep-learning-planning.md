@@ -113,14 +113,34 @@ datasets/
 
 ---
 
-## 📷 데이터 수집
+## 🦋 Augmentation의 필요성
 
-- 정상과 불량 이미지를 확보하고, 가능한 한 다양한 조건(조명, 각도, 배경 등)을 포함하는 것이 이상적이다.
-- 불량 데이터가 부족한 경우, 증강 기반 학습 혹은 합성 이미지 생성도 고려할 수 있다.
+![곤충 분류 예시 - Augmentation 샘플](/assets/images/post_planning/augmentation-sample.png)
 
-**고려 포인트**
-- 증강을 전제로 데이터 수집량을 줄일 수 있는지 검토
-- 합성 이미지의 사용 여부와 현실성 검토
+<small>
+출처: <a href="https://www.biorxiv.org/content/10.1101/2024.11.01.621497v1.full" target="_blank" rel="noopener noreferrer">
+BioRxiv 논문: Augmentation for Insect Species Identification</a>
+</small>
+
+---
+
+분류 모델이 Augmentation이 필요한 이유에 대해 설명하기 위해 
+곤충을 자동으로 감지하는 소프트웨어 **AInsectID**를 예시로 들겠습니다.
+카메라로 촬영된 이미지를 통해 곤충의 종류를 인식하는 프로그램입니다.
+
+예를 들어, 모델이 **호랑나비 사진 한 장만 보고 학습**했다고 가정해보겠습니다.  
+하지만 실제 환경에서는 나비가 다음과 같이 다양하게 등장할 수 있습니다:
+
+- 나뭇잎 위에 **비스듬히 앉아 있거나**
+- **그늘진 곳**에 있거나  
+- **날개의 무늬나 색상이 조금씩 다를 수도** 있습니다
+
+이러한 변화에 모델이 적응하지 못하면 곤충을 인식하지 못하게 됩니다.
+
+그래서 등장하는 것이 바로 👉 **데이터 증강(Augmentation)** 기법입니다.  
+이미지를 회전하거나, 색상을 바꾸거나, 위치를 이동시켜  
+모델이 다양한 상황에 대응할 수 있도록 학습 데이터를 풍부하게 만드는 과정입니다.
+
 
 ---
 
@@ -142,7 +162,7 @@ datasets/
 
 ### 🖼️ 예시 이미지
 
-![Blur Example](/assets/images/example-blur.jpg)
+![Blur Example](/assets/images/post_planning/example-blur.jpg)
 
 <small>
 출처: <a href="https://www.manula.com/manuals/fxhome/imerge-pro/2021.5/en/topic/blurs" target="_blank" rel="noopener noreferrer">
