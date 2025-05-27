@@ -44,6 +44,7 @@ toc_label: "Contents"
 
 그러나 최근에는 **AI의 발달로 이 개발 시간이 단축될 수 있는 가능성**도 보인다.
 
+➡️ [딥러닝 AI 발달 예측 포스트 보기](https://git-rich-club.github.io/planning/llm-vs-cognex/)
 ---
 
 ### 🤖 모델 개발 자동화에 대한 추론
