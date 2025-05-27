@@ -8,6 +8,13 @@ toc: true
 permalink: /planning/llm-vs-cognex/
 ---
 
+> 📌 이 글은 팀의 공식 입장이 아닌,  
+> 작성자 smlee의 **개인적 전망과 기술적 추론**을 담은 포스트입니다.  
+> 팀 내부 토론이나 연구 방향에 영향을 주지 않으며,  
+> 기술적 상상력을 바탕으로 한 **비공식 분석**입니다.  
+{: .notice--warning}
+
+
 ## 🧠 Cognex는 왜 산업에서 널리 사용되는가?
 
 산업 현장에서는 오랫동안 **Cognex Deep Learning**과 같은 GUI 기반 딥러닝 소프트웨어가 널리 쓰여왔다.  
