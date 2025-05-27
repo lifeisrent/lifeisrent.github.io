@@ -115,8 +115,10 @@ datasets/
 
 ## 🦋 Augmentation의 필요성
 
-![곤충 분류 예시 - Augmentation 샘플](/assets/images/2025/DLplanning/augmentation-sample.png)
-
+<img src="/assets/images/2025/DLplanning/augmentation-sample.png" 
+     alt="곤충 분류 예시 - Augmentation 샘플" 
+     width="400"/>
+     
 <small>
 출처: <a href="https://www.biorxiv.org/content/10.1101/2024.11.01.621497v1.full" target="_blank" rel="noopener noreferrer">
 BioRxiv 논문: Augmentation for Insect Species Identification</a>
