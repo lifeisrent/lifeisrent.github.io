@@ -142,7 +142,7 @@ datasets/
 
 ### 🖼️ 예시 이미지
 
-![Blur Example](/assets/images/example-blur.jpeg)
+![Blur Example](/assets/images/example-blur.jpg)
 
 <small>
 출처: <a href="https://www.manula.com/manuals/fxhome/imerge-pro/2021.5/en/topic/blurs" target="_blank" rel="noopener noreferrer">
