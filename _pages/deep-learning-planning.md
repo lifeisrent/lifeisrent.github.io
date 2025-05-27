@@ -128,8 +128,7 @@ BioRxiv 논문: Augmentation for Insect Species Identification</a>
 
 ## 🦋 Augmentation의 필요성
 
-모델 학습에 **Augmentation**이 
-필요한 이유를 설명하기 위한 예시로,  
+모델 학습에 **Augmentation**이 필요한 이유를 설명하기 위한 예시로,  
 카메라로 곤충을 인식하는 소프트웨어 **AInsectID**를 들겠다.
 
 모델이 **호랑나비 사진 한 장만** 학습했다고 가정하자.  
@@ -142,7 +141,7 @@ BioRxiv 논문: Augmentation for Insect Species Identification</a>
 이런 변화에 모델이 적응하지 못하면 인식이 실패할 수 있다.
 
 이를 해결하는 방법이 바로 👉 **데이터 증강(Augmentation)**이다.  
-회전, 색상 변화, 위치 이동 등으로 데이터를 다양하게 만들어  
+회전, 색상 변화, 위치 이동 등으로 데이터를 다양하게 만들어 
 모델이 다양한 상황에서도 잘 작동하도록 학습을 돕는다.
 
 ---
