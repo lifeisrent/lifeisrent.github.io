@@ -149,14 +149,6 @@ datasets/
 FXHome Imerge Pro Manual - Blur Effects</a>
 </small>
 
----
-
-### 🛠️ 참고 키워드
-- `Histogram Equalization (HE)`
-- `Canny Edge Detector`
-- `Edge Detection`
-
-
 
 ---
 
