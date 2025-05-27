@@ -128,8 +128,9 @@ BioRxiv 논문: Augmentation for Insect Species Identification</a>
 
 ## 🦋 Augmentation의 필요성
 
-곤충 분류 모델에는 **Augmentation**이 필요하다.  
-예시로, 카메라로 곤충을 인식하는 소프트웨어 **AInsectID**를 들 수 있다.
+모델 학습에 **Augmentation**이 
+필요한 이유를 설명하기 위한 예시로,  
+카메라로 곤충을 인식하는 소프트웨어 **AInsectID**를 들겠다.
 
 모델이 **호랑나비 사진 한 장만** 학습했다고 가정하자.  
 하지만 실제 환경에서는 나비가 다음처럼 다양하게 등장할 수 있다:
