@@ -72,6 +72,8 @@ toc_label: "Contents"
 운영자는 모델의 내부 구조나 학습 방식에 개입하지 않으며,  
 검사 장비에 고정된 형태로 실시간 분석을 수행한다.
 
+> [머신비전의 현장 적용 방향: 온디바이스 AI](https://www.thelec.kr/news/articleView.html?idxno=36173)  
+
 ---
 
 ## 📌 반도체 다이 검사 성능 요건
