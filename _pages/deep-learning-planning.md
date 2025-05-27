@@ -64,6 +64,12 @@ toc_label: "Contents"
 
 ## 🦋 Augmentation의 필요성
 
+모델 학습에는 다양한 데이터를 생성하기 위해 Augmentation이 필요하다. 
+
+아래는 Augmentation 의 부연 설명과 전처리의 필요성에 관한 포스트이다. 
+
+
+
 <img src="/assets/images/2025/DLplanning/augmentation-sample.png" 
      alt="곤충 분류 예시 - Augmentation 샘플" 
      width="700"/>
@@ -74,8 +80,6 @@ BioRxiv 논문: Augmentation for Insect Species Identification</a>
 </small>
 
 ---
-
-## 🦋 Augmentation의 필요성
 
 모델 학습에 **Augmentation**이 필요한 이유를 설명하기 위한 예시로,  
 카메라로 곤충을 인식하는 소프트웨어 **AInsectID**를 들겠다.
