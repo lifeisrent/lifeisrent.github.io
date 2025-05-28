@@ -1,6 +1,6 @@
 ---
-title: "📂 데이터 구성 방식 가이드: Classification vs Detection"
-excerpt: "ResNet과 YOLO 모델의 데이터 구성 차이와 라벨링 방식, 폴더 구조 팁을 정리했습니다."
+title: "📂 모델별 폴더 구조 가이드"
+excerpt: "ResNet과 YOLO 모델 학습에 필요한 폴더 구조와 라벨 형식을 비교 정리한 자료입니다."
 categories: [planning]
 tags: [dataset, labeling, directory]
 layout: single
@@ -11,8 +11,14 @@ permalink: /planning/data-structure-guidelines/
 
 ## 📌 개요
 
-딥러닝 모델의 유형에 따라 **데이터 디렉토리 구조**와 **라벨링 방식**은 달라진다.  
-이 글에서는 분류(Classification)와 검출(Detection) 모델의 **데이터 구성 차이와 실전 팁**을 정리한다.
+딥러닝 모델 학습은 대부분 정답이 주어진 **지도 학습(Supervised Learning)** 방식이다.  
+즉, 학습 전에 사람이 이미지가 **정상인지, 결함이 있는지**를 먼저 지정해 줘야 한다.  
+그리고 **모델별로 요구하는 폴더 구조와 라벨 포맷이 다르다.**
+
+이번 포스트에서는 대표적인 분류 모델인 **ResNet**과  
+대표적인 검출 모델인 **YOLOv5**를 기준으로  
+각 모델이 요구하는 **디렉토리 구조와 라벨 형식**을 비교 정리했다.
+
 
 ---
 
@@ -38,8 +44,9 @@ data/
 │   └── ...
 ```
 
-- `ImageFolder` 사용 시 폴더 이름이 자동으로 클래스(label)로 인식된다.
-- 별도의 라벨 파일 없이도 학습 가능하다.
+- Resnet의 폴더 구조는 정상 폴더와 결함 폴더 두 가지로 나뉘어있다.
+- 간단한 구조이지만 반드시 둘 다 있어야 학습이 가능하다. 
+- 대신 별도의 라벨 파일 없이도 학습이 가능하다.
 
 ### 🧪 예시 2: 검출 모델 (YOLO)
 
@@ -54,10 +61,12 @@ datasets/
 ```
 
 - 각 이미지에 대응하는 라벨 파일 (`.txt`) 혹은 `label.csv` 파일이 필요하다.
+- 라벨은 결함의 위치와 크기 정보가 들어있는 텍스트 파일이다.
 - YOLO 라벨 예시 (`labels/train/0001.txt`)
     
     ```css
-    0 0.45 0.52 0.2 0.1  # class x_center y_center width height
+    # class x_center y_center width height
+          0    0.45   0.52     0.2     0.1  
     ```
     
 - 좌표는 보통 **정규화된 값(0~1)**으로 표현하지만, 일부 데이터셋은 **절대 좌표(px)**를 사용하기도 하므로 반드시 라벨 형식을 데이터셋 설명에서 확인해야 한다.
