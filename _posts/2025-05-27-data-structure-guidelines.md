@@ -4,6 +4,10 @@ excerpt: "ResNet과 YOLO 모델 학습에 필요한 폴더 구조와 라벨 형�
 categories: [planning]
 tags: [dataset, labeling, directory]
 layout: single
+header      :
+  image     : /assets/images/2025/DLplanning/directory-structure.png
+  overlay_filter: 0.5
+  show_overlay_excerpt: true
 toc: true
 toc_label: "Contents"
 permalink: /planning/data-structure-guidelines/
