@@ -6,7 +6,8 @@ tags: [dataset, labeling, directory]
 layout: single
 header      :
   image     : /assets/images/2025/DLplanning/directory-structure.png
-  overlay_filter: 0.8
+  overlay_color: "#222"
+  overlay_filter: 0.5
   show_overlay_excerpt: true
   caption: "출처: [Kaggle - DAGM 2007 Optical Inspection Dataset](https://www.kaggle.com/datasets/mhskjelvareid/dagm-2007-competition-dataset-optical-inspection)"
 toc: true
