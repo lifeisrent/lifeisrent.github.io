@@ -1,7 +1,7 @@
 ---
 title: "🗓️ DAGM 프로젝트 타임라인 정리 (2025년 5월)"
 date: 2025-05-26
-categories: [프로젝트, 일정]
+categories: [general, dagm]
 tags: [DAGM, 머신비전, 타임라인, YOLO, CNN]
 toc: true
 layout: single

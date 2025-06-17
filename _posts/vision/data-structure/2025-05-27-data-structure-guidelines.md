@@ -1,7 +1,7 @@
 ---
 title: "📂 모델별 폴더 구조 가이드"
 excerpt: "ResNet과 YOLO 모델 학습에 필요한 폴더 구조와 라벨 형식을 비교 정리한 자료입니다."
-categories: [planning]
+categories: [vision, data-structure]
 tags: [dataset, labeling, directory]
 layout: single
 header      :

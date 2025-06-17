@@ -1,7 +1,7 @@
 ---
 title: "🦋 데이터 불균형 : Augmentation으로 해소"
 excerpt: "데이터 증강(Augmentation)이 왜 필요한지 설명하고, 실무에서 전처리를 보는 관점을 제시합니다."
-categories: [planning]
+categories: [vision, preprocessing]
 tags: [augmentation, preprocessing, data]
 layout: single
 toc: true

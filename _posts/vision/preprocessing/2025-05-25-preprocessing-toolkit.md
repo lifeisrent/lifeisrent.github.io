@@ -9,7 +9,7 @@ author_profile: true
 read_time: true
 comments: true
 share: true
-categories: [Preprocessing]
+categories: [vision, preprocessing]
 tags: [toolkit, augmentation, normalization, OpenCV]
 excerpt: "스크롤바로 조작 가능한 전처리 툴킷: Padding, 정규화, 블러 등 다양한 기법을 실습하며 이미지 품질을 향상시켜 보세요."
 ---
@@ -115,7 +115,7 @@ plt.show()
 
 📌 *코드 링크*
 
-🔗 [Colab에서 열기: 전처리 툴킷 실습하기](https://colab.research.google.com/drive/1wopaJsdKlRnV8OD1bxb3jMNMCOMk5Sh-?usp=sharing)
+🔗 [Colab Full 코드](https://colab.research.google.com/drive/1wopaJsdKlRnV8OD1bxb3jMNMCOMk5Sh-?usp=sharing)
 
 해당 노트북에서는 다양한 전처리 기법을 직접 적용해 보고,  
 **슬라이더나 버튼 위젯을 통해 파라미터를 조절하며 시각적으로 결과를 확인**할 수 있습니다.
