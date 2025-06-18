@@ -9,32 +9,58 @@
 	min-height: 70vh;
 	padding: 0;
 	margin: 30px 1erm;
-	border-radius: 30px;
-
-    .cloud{
-        position: relative;
+    border-radius: 30px;
+    
+        .cloud {position: relative;
         top: 0px;
         width: 280px;
         height: 80px;
         border-radius: 100px;
+        background: rgba(220, 227, 232, 0.8); // 밝은 반투명 구름
         z-index: 20;
-        /* filter: drop-shadow(0 0 2px #000); */
-        background: #1B263B;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-        &::before{
+        &::before {
             content: '';
             position: absolute;
-            top: -50px;
-            left: 40px;
+            top: -40px;
+            left: 30px;
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: #1B263B;
-            box-shadow: 90px 0 0 30px #1B263B;
+            background-color: rgba(220, 227, 232, 0.8);
+            box-shadow:
+                60px 0 0 20px rgba(220, 227, 232, 0.8),
+                120px 0 0 30px rgba(220, 227, 232, 0.8);
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            color: #5c6b73;
+            animation-name: drop-spin;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            font-weight: bold;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes drop-spin {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(250px) rotate(360deg);
+                opacity: 0;
+            }
         }
     }
-    .text{
-        position: absolute;
+    
+        .text {position: absolute;
         top: 40px;
         height: 20px;
         line-height: 20px;
