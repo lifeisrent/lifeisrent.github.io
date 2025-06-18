@@ -1,6 +1,6 @@
 ---
 title: "1. 기획 & 데이터 설계"
-layout: single
+layout: post
 sidebar:
   nav: main
 permalink: /projects/deep-learning/planning/

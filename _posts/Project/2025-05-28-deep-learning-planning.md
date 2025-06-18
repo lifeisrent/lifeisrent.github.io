@@ -1,9 +1,13 @@
 ---
 title: "1. 기획 & 데이터 설계"
 date: 2025-05-28 10:00:00 +0900
-layout: single
-categories: ["Sprint_01_Resnet_Classifier"]
-tags: [planning, dataset]
+layout: post
+categories: 
+    - Project
+    - Defect Classification
+tags: 
+    - planning 
+    - dataset
 toc: true
 toc_label: "Contents"
 ---

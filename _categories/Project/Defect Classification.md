@@ -1,6 +1,6 @@
 ---
-title: Defect Classifier using DAGM 2007
-name: Defect Classifier using DAGM 2007
+title: Defect Classification
+name: Defect Classification
 isSub: true
 layout: category
 parent: Project

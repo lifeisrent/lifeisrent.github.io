@@ -1,6 +1,6 @@
 ---
 title: "🛠️ 전처리 툴킷 소개"
-layout: single
+layout: post
 toc: true
 toc_label: "Toolkit Menu"
 header:
@@ -9,8 +9,12 @@ author_profile: true
 read_time: true
 comments: true
 share: true
-categories: [vision, preprocessing]
-tags: [toolkit, augmentation, normalization, OpenCV]
+categories: 
+    - Note
+    - Machine Learning
+tags: 
+    - augmentation
+    - OpenCV
 excerpt: "스크롤바로 조작 가능한 전처리 툴킷: Padding, 정규화, 블러 등 다양한 기법을 실습하며 이미지 품질을 향상시켜 보세요."
 ---
 

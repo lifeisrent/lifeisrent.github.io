@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<div id="post_page">
+    <div class="backg"></div>
+
+    <div class="post_wapper">
+        <div id="head">
+
+            {% for site_category in site.categories %}
+                {% for page_category in page.categories %}
+                    {% if site_category.name == page_category %}
+                        {% if site_category.isSub %}
+
+                        <div class="postpage_category_v" style="background-color: {{ site_category.color }};">
+                            <p><a href="{{ site_category.url }}">{{ site_category.name }}</a></p>
+                        </div>
+
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+            <h1>{{ page.title }}</h1>
+
+            <div class="mini_box_wAd">
+                <div class="mini_box_writer">
+                    <img width="96" height="96" src="https://img.icons8.com/color/96/user-typing-using-typewriter.png"/>
+                    <p>Git Rich</p>	
+                </div>
+                <p class="date">{{ page.date | date: "%Y. %m. %d/" }}</p>
+            </div>
+        </div>
+
+        <div id="body">
+
+            <div class="article">
+                {{ content }}
+            </div>
+            <td></td>
+            <!-- <div class="tag_title">
+            </div>
+
+            <div class="tag_label">
+            </div> -->
+
+            <div class="comment_box">
+                <script src="https://utteranc.es/client.js"
+                        repo="git-rich-club/git-rich-club.github.io"
+                        issue-term="pathname"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HTML -->
+    <div id="postModal">
+        <div class="menu_close_btn">
+            <img width="64" height="64" src="https://img.icons8.com/sf-black-filled/64/x.png" alt="x" onclick="closeModal()"/>
+        </div>
+
+        <div class="main_img">
+            <img class="left" width="96" height="96" src="https://img.icons8.com/fluency/96/left.png" alt="left" onclick="leftModal()"/>
+            <div></div>
+            <img class="right" width="96" height="96" src="https://img.icons8.com/fluency/96/right.png" alt="right" onclick="rightModal()"/>
+        </div>
+        <div class="all_img"></div>
+    </div>
+
+</div>
+
+{% include post/table_contents.html %}
+
+
+<script src="/assets/js/add_img_in_li.js"></script>
+<script src="/assets/js/add_language_in_codeBlock.js"></script>
+<script src="/assets/js/tableContents.js"></script>
+<script src="/assets/js/postModal.js"></script>

@@ -9,7 +9,7 @@ name: Project
 layout: category
 # 해당 카테고리에 하위 카테고리로 정의할 카테고리 배열
 children:
-    - Defect Classifier using DAGM 2007
+    - Defect Classification
     
 # 메인 아이콘
 icon: <img width="96" height="96" src="https://img.icons8.com/external-goofy-color-kerismaker/96/external-Project-graphic-design-goofy-color-kerismaker.png" alt="external-Project-graphic-design-goofy-color-kerismaker"/>
