@@ -1,0 +1,113 @@
+<div class="menu_close_btn">
+    <img width="64" height="64" src="https://img.icons8.com/sf-black-filled/64/x.png" alt="x" onclick="menu_close_click()"/>
+</div>
+
+<div class="profile">
+    <div class="profile_pic">
+        <img src="/assets/images/git-rich-logo.png" alt="Tech Breakthrough">
+    </div>
+    <p>Git Rich</p>
+</div>
+
+
+
+<div class="contact sidebar_box">
+    <h1>Contact Us</h1>
+    <div class="github contact_box">
+        <img width="96" height="96" src="https://img.icons8.com/color/96/github.png" alt="github"/>
+        <a href="https://github.com/Git-Rich-Club">Github</a>
+    </div>
+</div>
+
+
+<div id="category" class="sidebar_box">
+    <h1>Category<span class="count">{{site.posts.size}}</span></h1>
+    <ul class="menu_list">
+        {% assign sortedCategories = site.categories | sort: "order" %}
+    
+        {% for category in sortedCategories %}
+
+            {% if category.isSub %}
+                {% continue %}
+            {% endif %}
+    
+    
+            {% assign menuUrl = category.url %}
+    
+            {% if category.children.size >= 1 %}
+                {% assign menuUrl = 'javascript:;' %}
+            {% endif %}
+    
+            <div class="cat_box">
+                <li class="cat_title">
+                    {{ category.icon }}
+                    <a href="{{ category.url }}">{{ category.title }}</a>
+                </li>
+        
+                {% if category.children.size >= 1 %}
+                    <ul class="cat_part">
+                        {% for child in category.children %}
+    
+                            {% assign post_count = 0 %}
+    
+                            {% for post in site.posts %}
+                                {% for category in post.categories %}
+                                    {% if child == category %}
+                                        {% assign post_count = post_count | plus: 1 %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+    
+                            <li>
+                                {% for sub_category in site.categories %}
+                                    {% if sub_category.title == child %}
+                                        {{sub_category.icon}}
+                                    {% endif %}
+                                {% endfor %}
+    
+                                {% assign url_parts = page.url | split: '/' %}
+                                {% assign last_part = url_parts | last | url_decode %}
+    
+                                <a href="{{ category.url }}{{ child }}/" class="{% if last_part == child %}highlight{% endif %}">{{ child }}<span class="count_m">{{ post_count }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+    
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="user_panel" class="sidebar_box">
+    <h1>User Panel</h1>
+    <div class="set_ele">
+        <a href="/">
+            <img width="96" height="96" src="https://img.icons8.com/fluency/96/home.png" alt="home"/>
+        </a>
+    </div>
+</div>
+
+
+
+
+<!-- <div id="count" class="sidebar_box">
+    <h1>Count</h1>
+    <div class="set_ele">
+        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fradic2682.github.io&count_bg=%2391B0DD&title_bg=%2318253A&icon=&icon_color=%23580000&title=hits&edge_flat=false"/></a>
+    </div>
+</div> -->
+
+
+<button id="sidebar_on_off_btn">
+    <img width="64" height="64" src="/assets/images/icon_menu.png" alt="menu" onclick="menu_tag_click()"/>
+</button>
+

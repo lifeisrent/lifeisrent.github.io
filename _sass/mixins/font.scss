@@ -1,0 +1,137 @@
+
+@mixin font_poppins-s1 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+@mixin font_poppins-s2 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 10px;
+}
+
+@mixin font_poppins-m1 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+@mixin font_poppins-m2 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+@mixin font_poppins-m3 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+
+
+// font_poppins
+@mixin font_poppins_500 {
+	margin: 0; padding: 0;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+}
+@mixin font_poppins_600 {
+	margin: 0; padding: 0;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+@mixin font_pacifico_400 {
+	margin: 0; padding: 0;
+	font-family: 'Pacifico', cursive;
+	font-weight: 400;
+}
+@mixin font_pacifico_500 {
+	margin: 0; padding: 0;
+	font-family: 'Pacifico', cursive;
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin font_pretendard_400 {
+	margin: 0; padding: 0;
+	font-family: 'Pretendard-Regular';
+	font-weight: 400;
+}
+@mixin font_pretendard_500 {
+	margin: 0; padding: 0;
+	font-family: 'Pretendard-Regular';
+	font-weight: 500;
+}
+@mixin font_pretendard_600 {
+	margin: 0; padding: 0;
+	font-family: 'Pretendard-Regular';
+	font-weight: 600;
+}
+
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin font_omyu_400 {
+	margin: 0; padding: 0;
+	font-family: 'omyu_pretty';
+	font-weight: 400;
+}
+@mixin font_omyu_500 {
+	margin: 0; padding: 0;
+	font-family: 'omyu_pretty';
+	font-weight: 500;
+}
+@mixin font_omyu_600 {
+	margin: 0; padding: 0;
+	font-family: 'omyu_pretty';
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+// font Size
+@mixin font_size_S1 {font-size: 10px;}
+@mixin font_size_S2 {font-size: 12px;}
+@mixin font_size_S3 {font-size: 14px;}
+@mixin font_size_S3-5 {font-size: 15px;}
+@mixin font_size_S4 {font-size: 16px;}
+@mixin font_size_S5 {font-size: 18px;}
+@mixin font_size_S5-5 {font-size: 18px;}
+
+@mixin font_size_M1 {font-size: 20px;}
+@mixin font_size_M2 {font-size: 22px;}
+@mixin font_size_M3 {font-size: 24px;}
+@mixin font_size_M4 {font-size: 26px;}
+@mixin font_size_M5 {font-size: 28px;}
+
+@mixin font_size_L1 {font-size: 30px;}
+@mixin font_size_L2 {font-size: 32px;}
+@mixin font_size_L3 {font-size: 34px;}
+@mixin font_size_L4 {font-size: 36px;}
+@mixin font_size_L5 {font-size: 38px;}
+
+
+
+
+
+
+
+
+

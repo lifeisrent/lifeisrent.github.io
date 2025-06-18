@@ -1,62 +1,43 @@
 <!doctype html>
-{% include copyright.html %}
-<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+<html>
   <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-    <style>
-      .layout-wrapper {
-        display: flex;
-        flex-direction: row;
-        min-height: 100vh;
-      }
-  
-      .sidebar {
-        width: 200px;
-        background-color: #f3f3f3;
-        padding: 1rem;
-        box-sizing: border-box;
-      }
-  
-      .content-wrapper {
-        flex-grow: 1;
-        padding: 2rem;
-        box-sizing: border-box;
-      }
-    </style>
+    {% include head/head.html %}
   </head>
 
   <body>
-    <div class="layout-wrapper">
-      <aside class="sidebar">
-        {% include sidebar.html %}
-      </aside>
 
-      <div class="content-wrapper">
-        <header class="site-header">
-          <div class="wrapper">
-            <h1 class="site-title">{{ site.title }}</h1>
-            <nav class="site-nav">
-              <a href="{{ '/' | relative_url }}">Home</a> |
-              <a href="{{ '/about/' | relative_url }}">About</a> |
-              <a href="{{ '/categories/' | relative_url }}">Categories</a>
-            </nav>
-          </div>
-        </header>
-
-        <main class="page-content">
-          <div class="wrapper">
-            {{ content }}
-          </div>
-        </main>
-
-    <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include_cached footer.html %}
-      </footer>
+    <div id="sidebar">
+      {% include basic-ui/sidebar.html %}
     </div>
 
-    {% include scripts.html %}
+    <div class="all_wrapper">
+      <div id="sidebar_area"></div>
+
+      <div id="content_area">
+
+        <div id="content_area_wrapper">
+
+          <div id="top_area">
+            <div id="scoll_bar"></div>
+            <div id="top_nav_bar">
+              <a href="/"><img src="/assets/images/git-rich-logo.png" alt="Home" class="logo"></a>
+              <a href="/search/"><img id="top_search" src="/assets/images/icon_search_l.png" alt="Search"></a>
+            </div>
+          </div>
+  
+          <div id="content"> {{ content }} </div>
+          
+          {% include basic-ui/footer.html %}
+
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/srollbar.js"></script>
+    <script src="/assets/js/top_nav.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
+    
+    
   </body>
+
 </html>

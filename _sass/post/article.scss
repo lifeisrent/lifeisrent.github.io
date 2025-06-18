@@ -1,0 +1,322 @@
+@mixin article_border_shadow_padding {
+    border-radius: 12px;
+    border: 2px solid $mainColor;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px;
+
+    box-sizing : border-box;
+}
+
+
+// @mixin article_margin_30 { margin-top: 30px; margin-bottom: 30px; }
+@mixin article_margin_40 { margin-top: 40px; margin-bottom: 40px; }
+
+@mixin article_set_middle { margin-left: auto; margin-right: auto; }
+
+.article{
+    // @include flex-col-start-start;
+    // Flex box가 되면 아래 요소들의 margin이 안겹침
+    
+
+    width: 100%;
+    overflow: hidden;
+
+    h1, h2, h3, h4, h5, h6, p, a, blockquote,
+    ul, ol, li, u {
+        @include font_omyu_500;
+        @include font_size_M1;
+        color: $articleColor;
+        
+        margin-top: 10px; margin-bottom: 30px;
+
+        line-height: 28px;
+
+        text-align: justify
+    }
+
+    center {
+        @include font_omyu_600;
+        @include font_size_M1;
+        margin-bottom: 30px;
+    }
+
+    // ---------------------------------------------
+    // Basic
+    h1 {
+        @include font_pretendard_600;
+        @include font_size_M5;
+        color: $mainColor;
+
+        max-width: max-content;
+
+        margin-top: 60px; margin-bottom: 20px;
+        padding-top: 20px; padding-bottom: 5px;
+
+        border-bottom: 3px solid;
+
+        &:first-of-type {
+            margin-top: 30px;
+        }
+    }
+    h2 {
+        @include font_pretendard_600;
+        @include font_size_M3;
+        color: $mainColor;
+        margin-top: 50px; margin-bottom: 10px;
+    }
+    h3 {
+        @include font_pretendard_600;
+        @include font_size_M2;
+        color: $mainColor;
+        margin-top: 40px; margin-bottom: 16px;
+        font-size: 20px;
+    }
+    p {
+        max-width: 100%;
+        width: 100%;
+    }
+    a {
+        @include font_pretendard_600;
+        @include font_size_S3;
+
+        background-color: #fed9b7;
+
+        padding: 3px 6px;
+        border-radius: 5px;
+
+        transition: color 0.2s;
+
+        &:hover {
+            color: $MyOrange;
+        }
+    }
+
+
+    // ---------------------------------------------
+    // Emphase
+    em {
+        font-style: italic;
+    }
+    code {
+        @include font_pretendard_600;
+        @include font_size_S3-5;
+
+        background-color: #fed9b7;
+
+        padding: 3px 6px;
+        border-radius: 5px;
+    }
+    strong {
+        @include font_pretendard_600;
+        @include font_size_S4;
+    }
+    u {
+        max-width: 100%;
+        width: 100%;
+
+        text-decoration: none;
+        background: linear-gradient(to top, rgba(246, 225, 153, 0.4) 50%, transparent 60%);
+        border-radius: 0px 0px 0px 10px;
+    }
+
+    // ---------------------------------------------
+    // list
+    ul {
+        li {
+            margin-top: 5px; margin-bottom: 5px;
+
+            
+            img {
+                width: 24px;
+                height: auto;
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    ol {
+        li {
+            margin-top: 5px; margin-bottom: 5px;
+
+            img {
+                width: 28px;
+                height: auto;
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+    // ---------------------------------------------
+    // link
+    p a {
+        @include article_border_shadow_padding;
+        margin-top: 20px; margin-bottom: 40px;
+
+        background-color: transparent;
+
+        text-decoration: none;
+
+        padding: 6px 8px;
+    }
+    p:has(a) {
+        text-align: center;
+    }
+
+    // ---------------------------------------------
+    // Dividing line
+    hr {
+        @include  article_set_middle;
+        margin-top: 20px; margin-bottom: 20px;
+
+        background: $MyOrange;
+        height: 5px;
+        width: 120px;
+
+        border: 0;
+        opacity: 0.5;
+    }
+
+
+
+    // ---------------------------------------------
+    // blockquote
+    blockquote {
+        border-left: 3px solid;
+        border-color: $mainColor;
+        
+        padding-left: 15px;
+
+        p {padding: 0; margin: 0;}
+        blockquote {padding: 0 0 0 20px; margin: 0;}
+    }
+
+
+    // ---------------------------------------------
+    // emoji
+    .emoji {
+        all: initial;
+        width: 26px;
+    }
+
+
+    // ---------------------------------------------
+    // Image
+    p img {
+        @include article_set_middle;
+        @include article_margin_40;
+        @include article_border_shadow_padding;
+        max-width: 100%;
+
+        margin-top: 10px; margin-bottom: 30px;
+
+        display: block;
+        // block으로 해야 가운데 정렬됨
+
+        cursor: pointer;
+    }
+
+
+    // ---------------------------------------------
+    // Code BOX
+    .highlighter-rouge {
+        @include article_set_middle;
+        margin-top: 20px; margin-bottom: 40px;
+
+        width: 90%;
+
+        .language_label {
+            @include font_pretendard_600;
+            @include font_size_S4;
+            color: $MyOrange;
+
+            width: min-content;
+
+            background-color: transparent;
+
+            border-radius: 12px 12px 0 0;
+            border: 2px solid $mainColor;
+            border-bottom: none;
+            
+            margin-left: 15px;
+            padding: 3px 16px;
+        }
+        pre {
+            overflow: scroll;
+        }
+        code {
+            background-color: transparent;
+            padding: 0;
+
+            line-height: 20px;
+        }
+        div.highlight {
+            @include article_border_shadow_padding;
+
+        }
+    }
+
+
+    // ---------------------------------------------
+    // Table
+    table {
+        @include article_set_middle;
+        @include article_border_shadow_padding;
+        margin-top: 20px; margin-bottom: 40px;
+
+        width: 90%;
+
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+
+        td, th {
+            padding: 1em .5em;
+            vertical-align: middle;
+        }
+        td {
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            background: #fff;
+        }
+        th {
+            text-align: left;
+        }
+        thead {
+            font-weight: bold;
+            background: #fed9b7;
+        }
+    }
+      
+      
+    // Embeded
+    embed {
+        @include article_set_middle;
+        @include article_border_shadow_padding;
+        margin-top: 20px; margin-bottom: 40px;
+
+        width: 90%;
+
+        min-height: 280px;
+
+        display: block;
+    }
+    
+    /* link */
+    p:has(embed) {
+        text-align: center;
+    }
+    
+        
+
+
+
+}
+
+
+
+
+
+
+

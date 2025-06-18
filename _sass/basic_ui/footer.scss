@@ -1,0 +1,21 @@
+
+
+.page_footer {
+
+    box-sizing : border-box;
+	min-height: 30px;
+	margin: 5rem auto 2rem auto;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+
+	p {
+		@include font_pacifico_400;
+        @include font_size_S3;
+	}
+}
+

@@ -1,0 +1,27 @@
+
+#down_box {
+	display: flex;
+	justify-content: space-evenly;
+	min-height: 80px;
+	margin-top: 8vh;
+	margin-bottom: 20vh;
+
+    img {
+        align-self: center;
+    
+        padding: 3px;
+        margin-top: 0;
+        height: 50px;
+        width: 50px;
+    
+        font-size: 20px;
+    
+        color: rgb(0, 0, 0);
+    
+        border-radius: 50%;
+        border-width: 2px;
+        transition: all 0.1s ease;
+        cursor: default;
+        animation: updown_motion 0.5s linear 0s infinite alternate;
+    }
+}

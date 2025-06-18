@@ -1,0 +1,58 @@
+---
+
+---
+
+* {
+    box-sizing: border-box;
+}
+div {
+    padding: 0;
+    margin: 0;
+}
+
+
+// Mixins
+@import "mixins/font";
+@import "mixins/colors";
+@import "mixins/flex_box";
+@import "mixins/new_project_box";
+
+// Animation
+@import "animation/animation";
+
+// default
+@import "default";
+
+
+// basic_UI
+@import "basic_ui/footer";
+@import "basic_ui/sidebar";
+
+
+// ===========================
+// main
+@import "main/down_box";
+@import "main/main_box";
+@import "main/main_top";
+
+
+@import "category";
+
+// post
+@import "post";
+@import "post/table_contents";
+@import "post/article";
+@import "post/cat_shelter";
+@import "post/code_syntax";
+
+// visiting
+@import "visiting";
+
+// search
+@import "search";
+
+
+// ===========================
+
+
+// ===========================

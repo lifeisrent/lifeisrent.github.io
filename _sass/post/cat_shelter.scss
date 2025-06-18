@@ -1,0 +1,123 @@
+.catShelter{
+    height: 350px;
+    width: 240px;
+    position: relative;
+
+    .window{
+        height: 70%;
+        width: 70%;
+        position: absolute;
+    
+        background-color: #29467a;
+        outline: 10px solid #1B263B;
+    
+        border-left: 4px solid #439abf;
+        border-right: 4px solid #439abf;
+        position: relative;
+    
+        left: calc(30%/2);
+        top: 10%;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background: linear-gradient(#439abf 50%, #2d2623 50%);
+        }
+        &::before{
+            height: 10px;
+            width: 130%;
+            left: calc(-30%/2);
+            bottom: -10px;
+        }
+        &::after {
+            height: 10px;
+            width: 105%;
+            left: calc(-5%/2);
+            top: 50%;
+        }
+
+        .castle {
+            position: absolute;
+            height: 40%;
+            z-index: 20;
+            bottom: 0;
+            left: -18%;
+        }
+        .kitty {
+            position: absolute;
+            background-color: #2d2623;
+            height: 40%;
+            width: 40px;
+            bottom: -3%;
+            right: 25%;
+            border-radius: 40px 40px 0 0 ;
+
+            &::before{
+                content: "";
+                position: absolute;
+                background-color: #2d2623;
+                height: 60%;
+                width: 50px;
+                border-radius: 0 80px 80px 0;
+                bottom: 0;
+                right: -70%;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: #2d2623;
+                height: 50%;
+                width: 8px;
+                border-radius: 5px;
+                bottom: -50%;
+                right: -15%;
+                transform: rotate(-15deg);
+                transform-origin: top;
+                animation: tail 4s infinite;
+            }
+
+            .ear{
+                height: 0;
+                width: 0;
+                border-bottom: 26px solid #2d2623;
+                border-right: 18px solid transparent;
+                position: relative;
+                bottom: 8%;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    height: 0;
+                    width: 0;
+                    border-bottom: 26px solid #2d2623;
+                    border-left: 18px solid transparent;
+                    bottom: -25px;
+                    left: 22px;
+                }
+            }
+        }
+        .moon{
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: -15px 8px 0 1px #F0C419;
+            left: 30px;
+            top: 10px;
+        }
+        .star{
+            height: 4px;
+            width: 4px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #F0C419;
+            left: 90px;
+            top: 20px;
+            box-shadow: 50px 40px #F0C419, 25px 80px #F0C419, 50px 150px #F0C419, -70px 80px #F0C419, -50px 130px #F0C419;
+            animation: twinkle 2s infinite;
+        }
+    }
+}
+

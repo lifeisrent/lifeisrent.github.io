@@ -1,0 +1,65 @@
+
+@media (max-width: 1300px) { 
+
+
+    #sidebar {
+        margin-left: -280px;
+    
+        #sidebar_on_off_btn{
+            position: fixed;
+            background-color: transparent;
+            border: transparent;
+        
+            left: 0px;
+            bottom: 20px;
+            transition: all 0.3s;
+            z-index: 500;
+            margin-left: 20px;
+    
+            #sidebar_on_off_btn img{
+                width: 40px;
+                height: 40px;
+    
+                &:hover{
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+
+
+

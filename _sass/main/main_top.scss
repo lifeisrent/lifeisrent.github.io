@@ -1,0 +1,95 @@
+.main_top {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-content: center;
+	align-items: center;
+
+	width: 100%;
+	min-height: 70vh;
+	padding: 0;
+	margin: 30px 1erm;
+	border-radius: 30px;
+
+    .cloud{
+        position: relative;
+        top: 0px;
+        width: 280px;
+        height: 80px;
+        border-radius: 100px;
+        z-index: 20;
+        /* filter: drop-shadow(0 0 2px #000); */
+        background: #1B263B;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 40px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #1B263B;
+            box-shadow: 90px 0 0 30px #1B263B;
+        }
+    }
+    .text{
+        position: absolute;
+        top: 40px;
+        height: 20px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #1B263B;
+        /* text-shadow: 0 0 5px #000; */
+        transform-origin: bottom;
+        animation: cloud_eff 2s linear forwards;
+        z-index: 19;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+
+        h1 {
+            font-weight: 300;
+            font-family: 'Pacifico', cursive;
+            color: #1B263B;
+            font-size: 3.8rem;
+            margin: 0;
+            margin-bottom: 50px;
+        
+            transition: font-size 1s;
+        }
+        p {
+            font-weight: 600;
+            font-family: 'Gugi', sans-serif;
+            color: #1B263B;
+            font-size: 1.4rem;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .emp_word{
+            position: relative;
+        
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            font-family: 'Gugi', sans-serif;
+            font-weight: 600;
+
+            &::before{
+                content: "";
+                right: -8px;
+                top: 50%;
+                position: absolute;
+                height: 30px;
+                width: 3px;
+                background: #000;
+                transform: translateY(-45%);
+                animation: blink 0.7s infinite;
+            }
+        }
+    }
+}
+
+

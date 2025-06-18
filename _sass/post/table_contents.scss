@@ -1,0 +1,117 @@
+// Table
+.table_contents{
+    position: fixed;
+
+    top: calc(20vh + 100px + 30px);
+    right: 15px;
+    width: 190px;
+    max-height: 50vh;
+    padding: 10px;
+    margin-right: 0px;
+
+    background-color: #f5ebe0;
+
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    z-index: 300;
+
+    // display: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: top;
+
+    transition: right 0.5s;
+
+    &::-webkit-scrollbar { display: none;}
+
+    .table_contents_btn{
+        position: fixed;
+        margin: 6px;
+        top: calc(20vh + 100px + 30px);
+        right: 185px;
+    
+        width: 25px;
+        height: 25px;
+    
+        border-radius: 50%;
+        background-color: #ffd6a5;
+    
+        cursor: pointer;
+    
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    
+        z-index: 301;
+    
+        transition: all 0.5s;
+
+        p{
+            padding: 0;
+            margin: 0;
+            color: #1B263B;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Pretendard-Regular', sans-serif;
+        }
+    }
+    .table_title{
+        margin: 0;
+        margin-bottom: 10px;
+
+        text-align: center;
+    
+        color: #000000;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: 'Pretendard-Regular', sans-serif;
+    }
+    .table_content_inner{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        align-content: start;
+        justify-content: top;
+        width: 100%;
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+
+            li{
+                cursor: pointer;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .toc-level-1{
+            @include font_pretendard_600;
+            @include font_size_S3;
+            color: $mainColor;
+
+            margin-bottom: 8px;
+            padding-bottom: 1px;
+        }
+        .toc-level-2{
+            @include font_pretendard_500;
+            @include font_size_S2;
+            color: #000000;
+
+            margin-bottom: 8px;
+            padding-bottom: 1px;
+            margin-left: 10px;
+        }
+    }
+
+}
+

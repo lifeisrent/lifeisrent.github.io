@@ -1,0 +1,46 @@
+
+
+
+@keyframes cloud_eff {
+	0%{transform: translateY(0) scale(1);}
+	70%{transform: translateY(150px) scale(1);}
+	100%{transform: translateY(150px) scale(1);}
+}
+@keyframes blink {
+	50%{opacity: 0;}
+}
+
+
+@keyframes updown_motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 15px;}
+}
+
+
+@keyframes wave {
+	0% {background-position-x: 1000px;}
+	100% {background-position-x: 0;}
+}
+@keyframes wave2 {
+	0% {background-position-x: 0px;}
+	100% {background-position-x: 1000px;}
+}
+
+
+
+// post
+@keyframes tail {
+	50% {transform: rotate(10deg);}
+}
+@keyframes twinkle {
+	50% {opacity: 50%;}
+}
+
+
+
+// search
+@keyframes spin {
+	49% {z-index: 11;}
+	50% {left: 210px; bottom: -70px; z-index: 9;}
+	100% {z-index: 9;}
+}
