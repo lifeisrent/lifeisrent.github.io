@@ -52,7 +52,9 @@ div {
 @import "search";
 
 
-// ===========================
-
+// media query
+@import "media_q/max_0to767";
+@import "media_q/max_768to1023";
+@import "media_q/max_1300";
 
 // ===========================
