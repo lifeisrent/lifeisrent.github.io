@@ -1,0 +1,19 @@
+---
+layout: null
+---
+
+[
+    {% for post in site.posts %}
+        {
+        "title"         : "{{ post.title}}",
+        
+        "category"      : "{{ post.categories | join: ' > ' }}",
+        "tags"          : "{{ post.tags | join: ', ' }}",
+        "url"           : "{{ site.baseurl }}{{ post.url }}",
+        "date"          : "{{ post.date }}",
+        "excerpt"       : "{{ post.excerpt }}"
+        } {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+
+

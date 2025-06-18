@@ -2,41 +2,44 @@
 layout: default
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% endif %}
-
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-<div id="main" role="main">
-  {% include sidebar.html %}
-
-  <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
-    {% endunless %}
-
-    {{ content }}
-
-    {%- assign search_provider = site.search_provider | default: "lunr" -%}
-    {%- case search_provider -%}
-      {%- when "lunr" -%}
-        <input type="text" id="search" class="search-input" placeholder="{{ site.data.ui-text[site.locale].search_placeholder_text | default: 'Enter your search term...' }}" />
-        <div id="results" class="results"></div>
-      {%- when "google" -%}
-        <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-        <input type="text" id="cse-search-input-box-id" class="search-input" placeholder="{{ site.data.ui-text[site.locale].search_placeholder_text | default: 'Enter your search term...' }}" />
-        </form>
-        <div id="results" class="results">
-          <gcse:searchresults-only></gcse:searchresults-only>
+<div id="search_page">
+    <div class="backg"></div>
+    
+    <div class="search_body">
+        <div id="head">
+            <h2>Search!</h2>
+            <input id="search-input" type="text" placeholder="A fire fox..." />
         </div>
-      {%- when "algolia" -%}
-        <div class="search-searchbar"></div>
-        <div class="search-hits"></div>
-    {%- endcase -%}
-  </div>
-</div>
+        
+        <div id="project_box_wrapper"></div>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/assets/js/simple-jekyll-search.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            SimpleJekyllSearch({
+                 searchInput: document.getElementById('search-input'),
+                 resultsContainer: document.getElementById('project_box_wrapper'),
+                 json: '/search.json',
+                 searchResultTemplate: `
+                    <div id="new_project_box" onClick="location.href ='{url}'" style="cursor:pointer;">
+                        <div id="imgBox">
+                            <img src="{thumbnail}" alt="{title} Thumbnail">
+                        </div>
+        
+                        <p id="box_category" style="background-color: #d8e2dc";">{category}</p>
+        
+                        <a href="{url}"><p id="box_title">{title}</p></a>
+                        <p class="description">{excerpt}</p>
+                        <p id="signature">- Sun Hong</p>
+                    </div>
+                 `,
+                 noResultsText: '검색결과가 존재하지 않습니다.',
+                 limit: 10000,
+                 fuzzy: false,
+                 exclude: ['Welcome']
+            });
+        </script>
+
+    </div>
+
