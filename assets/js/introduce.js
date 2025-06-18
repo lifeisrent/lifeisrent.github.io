@@ -3,7 +3,7 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeEffect(){
-  const words = ["Deep Learning", "AMR", "Vision Inspection"];
+  const words = ["Robot Engineers", "Vision Algorithm developers", "Equipment Engineers"];
   const word = document.querySelector('.emp_word');
   const currentWord = words[wordIndex];
 
