@@ -1,5 +1,5 @@
 ---
-title: "1. 기획 & 데이터 설계"
+title: "1. planning"
 date: 2025-05-28 10:00:00 +0900
 layout: post
 categories: 
@@ -13,7 +13,7 @@ toc_label: "Contents"
 ---
 
 
-# 기획
+## 기획
 
 ## 선정 배경
 
