@@ -1,11 +1,17 @@
 ---
 title: "2. 모델링 & 학습 평가"
 date: 2025-05-29 10:00:00 +0900
-layout: single
-categories: ["Sprint_01_Resnet_Classifier"]
-toc : true
-toc_label: "Contents"
+layout: post
+thumbnail: https://www.researchgate.net/publication/356553398/figure/fig2/AS:1094438805868545@1637945953131/Samples-of-the-DAGM-2007-data-set.jpg
+categories:
+    - Project
+    - Defect Classification
+tags: 
+    - planning 
+    - model
+excerpt: Train DAGM2007 dataset 
 ---
+
 # 모델링 환경
 1. 로컬 환경
 	1. CUDA 설치 필요
@@ -22,7 +28,7 @@ toc_label: "Contents"
 	- `train`, `val`, `test` 하위 폴더 생성
 	- 0.8:0.1:0.1 비율로 생성
 
-![](assets/images/Project/2025-05-29-deep-learning-modeling/dataset_tree.png)
+![](/assets/images/Project/2025-05-29-deep-learning-modeling/dataset_tree.png)
 
 # Train
 - YOLOv11-setgment 모델 이용
@@ -76,7 +82,7 @@ results = model.predict(source ='/content/DAGM2007_ws/yoloseg_datasets/yoloseg_d
 ```
 
 
-![](assets/images/Project/2025-05-29-deep-learning-modeling/predict_test_result.png)
+![](/assets/images/Project/2025-05-29-deep-learning-modeling/predict_test_result.png)
 
 # 결과 분석
 > test data를 이용한 정확도 측정, 결과 데이터 분석
@@ -112,4 +118,4 @@ else:
     cv2_imshow(img)
 ```
 
-![](assets/images/Project/2025-05-29-deep-learning-modeling/defect_result_NMS.png)
+![](/assets/images/Project/2025-05-29-deep-learning-modeling/defect_result_NMS.png)
