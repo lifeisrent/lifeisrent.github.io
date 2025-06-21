@@ -35,7 +35,7 @@ layout: default
 
         <div id="body">
 
-            <div class="article">
+            <div class="article", markdown="1">
                 {{ content }}
             </div>
             <td></td>
@@ -76,9 +76,11 @@ layout: default
 </div>
 
 {% include post/table_contents.html %}
+{% include mathjax_support.html %}
 
 
-<script src="/assets/js/add_img_in_li.js"></script>
+
+<!-- <script src="/assets/js/add_img_in_li.js"></script> -->
 <script src="/assets/js/add_language_in_codeBlock.js"></script>
 <script src="/assets/js/tableContents.js"></script>
 <script src="/assets/js/postModal.js"></script>
