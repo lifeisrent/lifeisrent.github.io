@@ -1,3 +1,4 @@
+
 export async function onRequest(context) {
 
     const requestUrl =
@@ -75,4 +76,35 @@ export async function onRequest(context) {
     }
 
     return context.next();
+}
+
+async function createSignature(message, secretKey) {
+  const encoder = new TextEncoder();
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secretKey),
+    {
+      name: "HMAC",
+      hash: "SHA-256"
+    },
+    false,
+    ["sign"]
+  );
+
+  const signatureBuffer = await crypto.subtle.sign(
+    "HMAC",
+    cryptoKey,
+    encoder.encode(message)
+  );
+
+  const signatureBytes = Array.from(new Uint8Array(signatureBuffer));
+
+  const signatureText = signatureBytes
+    .map(function (byte) {
+      return byte.toString(16).padStart(2, "0");
+    })
+    .join("");
+
+  return signatureText;
 }
