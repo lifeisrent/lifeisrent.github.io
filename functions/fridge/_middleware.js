@@ -1,4 +1,6 @@
-const cookieHeader =
+
+export async function onRequest(context) {
+    const cookieHeader =
     context.request.headers.get("Cookie");
 
 if (
@@ -7,7 +9,6 @@ if (
 ) {
     return context.next();
 }
-export async function onRequest(context) {
   const request = context.request;
   const requestUrl = new URL(request.url);
 
