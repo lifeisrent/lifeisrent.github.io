@@ -1,0 +1,148 @@
+---
+layout: single
+title: 냉장고
+permalink: /fridge/
+---
+
+<h1>냉장고</h1>
+
+<div>
+    <label for="foodNameInput">
+        식품 이름
+    </label>
+
+    <input
+        id="foodNameInput"
+        type="text"
+        placeholder="예: 우유">
+</div>
+
+<div>
+    <label for="expirationDateInput">
+        유통기한
+    </label>
+
+    <input
+        id="expirationDateInput"
+        type="date">
+</div>
+
+<button id="saveFoodButton">
+    저장
+</button>
+
+<hr>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>식품 이름</th>
+            <th>유통기한</th>
+            <th>상태</th>
+        </tr>
+    </thead>
+
+    <tbody id="foodTableBody">
+    </tbody>
+</table>
+
+<script>
+const foodNameInput =
+    document.getElementById("foodNameInput");
+
+const expirationDateInput =
+    document.getElementById("expirationDateInput");
+
+const saveFoodButton =
+    document.getElementById("saveFoodButton");
+
+const foodTableBody =
+    document.getElementById("foodTableBody");
+
+saveFoodButton.addEventListener(
+    "click",
+    saveFood
+);
+
+loadFoods();
+
+async function loadFoods() {
+    const response =
+        await fetch("/api/foods");
+    const responseJson =
+        await response.json();
+
+    foodTableBody.innerHTML = "";
+
+    responseJson.foods.forEach(function (food) {
+        const tableRow =
+            document.createElement("tr");
+
+        const nameCell =
+            document.createElement("td");
+
+        nameCell.textContent =
+            food.name;
+
+        const expirationDateCell =
+            document.createElement("td");
+
+        expirationDateCell.textContent =
+            food.expiration_date;
+
+        const statusCell =
+            document.createElement("td");
+
+        if (food.expired === 1) {
+            statusCell.textContent = "만료됨";
+        }
+        else {
+            statusCell.textContent = "정상";
+        }
+
+        tableRow.appendChild(nameCell);
+        tableRow.appendChild(expirationDateCell);
+        tableRow.appendChild(statusCell);
+
+        foodTableBody.appendChild(tableRow);
+    });
+}
+
+async function saveFood() {
+    const foodName =
+        foodNameInput.value.trim();
+
+    const expirationDate =
+        expirationDateInput.value;
+
+    if (!foodName || !expirationDate) {
+        alert("식품 이름과 유통기한을 입력해주세요.");
+        return;
+    }
+
+    const response =
+        await fetch(
+            "/api/foods",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: foodName,
+                    expirationDate: expirationDate
+                })
+            }
+        );
+
+    if (!response.ok) {
+        alert("저장에 실패했습니다.");
+        return;
+    }
+
+    foodNameInput.value = "";
+    expirationDateInput.value = "";
+
+    await loadFoods();
+}
+</script>
