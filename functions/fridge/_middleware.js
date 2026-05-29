@@ -1,3 +1,12 @@
+const cookieHeader =
+    context.request.headers.get("Cookie");
+
+if (
+    cookieHeader &&
+    cookieHeader.includes("owner=true")
+) {
+    return context.next();
+}
 export async function onRequest(context) {
   const request = context.request;
   const requestUrl = new URL(request.url);

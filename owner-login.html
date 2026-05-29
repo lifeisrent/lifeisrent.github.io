@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Owner Login</title>
+</head>
+<body>
+
+<h1>Owner Login</h1>
+
+<input
+    id="passwordInput"
+    type="password"
+    placeholder="Password">
+
+<button onclick="login()">
+    Login
+</button>
+
+<script>
+
+async function login() {
+
+    const passwordValue =
+        document.getElementById("passwordInput").value;
+
+    const response =
+        await fetch("/api/owner-login", {
+            method: "POST",
+            body: passwordValue
+        });
+
+    if (response.ok) {
+        alert("Login success");
+        location.href = "/fridge/";
+    }
+    else {
+        alert("Wrong password");
+    }
+}
+
+</script>
+
+</body>
+</html>
