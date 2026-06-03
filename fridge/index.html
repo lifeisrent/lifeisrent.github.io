@@ -39,6 +39,7 @@ permalink: /fridge/
             <th>식품 이름</th>
             <th>유통기한</th>
             <th>상태</th>
+            <th>삭제</th>
         </tr>
     </thead>
 
@@ -93,6 +94,12 @@ async function loadFoods() {
         const statusCell =
             document.createElement("td");
 
+        const deleteCell =
+            document.createElement("td");
+
+        const deleteButton =
+            document.createElement("button");
+
         if (food.expired === 1) {
             statusCell.textContent = "만료됨";
         }
@@ -100,9 +107,21 @@ async function loadFoods() {
             statusCell.textContent = "정상";
         }
 
+        deleteButton.type = "button";
+        deleteButton.textContent = "삭제";
+        deleteButton.addEventListener(
+            "click",
+            function () {
+                deleteFood(food.id);
+            }
+        );
+
+        deleteCell.appendChild(deleteButton);
+
         tableRow.appendChild(nameCell);
         tableRow.appendChild(expirationDateCell);
         tableRow.appendChild(statusCell);
+        tableRow.appendChild(deleteCell);
 
         foodTableBody.appendChild(tableRow);
     });
@@ -142,6 +161,36 @@ async function saveFood() {
 
     foodNameInput.value = "";
     expirationDateInput.value = "";
+
+    await loadFoods();
+}
+
+async function deleteFood(foodId) {
+    const shouldDelete =
+        window.confirm("이 항목을 삭제할까요?");
+
+    if (!shouldDelete) {
+        return;
+    }
+
+    const response =
+        await fetch(
+            "/api/foods",
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id: foodId
+                })
+            }
+        );
+
+    if (!response.ok) {
+        alert("삭제에 실패했습니다.");
+        return;
+    }
 
     await loadFoods();
 }

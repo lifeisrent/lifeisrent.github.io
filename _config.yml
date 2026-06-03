@@ -145,3 +145,7 @@ whitelist:
   - jekyll-include-cache
 
 
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
