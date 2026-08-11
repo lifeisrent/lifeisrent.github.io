@@ -6,9 +6,11 @@ layout: default
     <div class="backg"></div>
 
     <div class="post_wapper">
+        {% assign category_collection = site.collections | where: "label", "categories" | first %}
+        {% assign category_docs = category_collection.docs %}
         <div id="head">
 
-            {% for site_category in site.categories %}
+            {% for site_category in category_docs %}
                 {% for page_category in page.categories %}
                     {% if site_category.name == page_category %}
                         {% if site_category.isSub %}

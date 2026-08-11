@@ -8,11 +8,13 @@ layout: default
     </div>
     
     <div class="category_body">
+        {% assign category_collection = site.collections | where: "label", "categories" | first %}
+        {% assign category_docs = category_collection.docs %}
         <div id="head">
             {% assign url_parts = page.url | split: '/' %}
             {% assign last_part = url_parts | last | url_decode %}
 
-            {% for category in site.categories %}
+            {% for category in category_docs %}
                 {% if category.name == last_part %}
 
                     {{ category.icon }}
@@ -41,7 +43,7 @@ layout: default
             
                             {% for sub_category in post.categories %}
 
-                                {% for selected_category in site.categories %}
+                                {% for selected_category in category_docs %}
                                 {% if selected_category.title == sub_category %}
                                     {% if selected_category.isSub %}
                                         <a href="{{selected_category.url}}"><p id="box_category" style="background-color: {{ selected_category.color }};">{{ sub_category }}</p></a>

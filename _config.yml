@@ -114,6 +114,9 @@ collections:
   categories: # 카테고리정의 markdown 파일들이 위치할 디렉토리 이름. (프로젝트에 _categories 디렉토리 생성)
     output: true  # html 페이지 생성
     permalink: /category/:path/ # 생성된 페이지의 URL 형식
+  notes:
+    output: true
+    permalink: /notes/:path/
 
 
 
@@ -143,9 +146,3 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
-
-collections:
-  notes:
-    output: true
-    permalink: /notes/:path/
