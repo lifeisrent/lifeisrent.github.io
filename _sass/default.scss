@@ -72,6 +72,13 @@ body {
             box-sizing : border-box;
         
             transition: padding 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            transition:
+                padding 0.3s ease,
+                opacity 0.2s ease,
+                transform 0.2s ease;
 
             img{
                 height: 55px;
@@ -81,6 +88,12 @@ body {
             }
             #top_search{
                 transition: all 0.5s;
+            }
+
+            &.is-hidden-at-scroll {
+                opacity: 0;
+                transform: translateY(-12px);
+                pointer-events: none;
             }
         }
 
