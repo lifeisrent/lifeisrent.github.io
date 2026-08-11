@@ -15,6 +15,17 @@ const cate_wave = document.querySelector('#category_page .wave');
 let sidebar_Open = true;
 let sidebar_blocked = false;
 
+function isCompactLayout() {
+    return matchMedia("(max-width: 1300px)").matches;
+}
+
+function applyRoundedCorners(radius) {
+    post_back?.style.setProperty('border-radius', radius, 'important');
+    cate_back?.style.setProperty('border-radius', radius, 'important');
+    search_back?.style.setProperty('border-radius', radius, 'important');
+    cate_wave?.style.setProperty('border-radius', radius, 'important');
+}
+
 function menu_close_click() {
     close_menu();
     sidebar_blocked = true;
@@ -29,31 +40,31 @@ function menu_tag_click() {
 function close_menu(){
     sidebar.style.marginLeft = "-300px";
     sidebar_on_off_btn.style.marginLeft = "20px";
+    applyRoundedCorners('0');
     sidebar_area.style.display = "none";
-    // content_area.style.width = "100%";
     content_area.style.margin = "0";
     top_area.style.top = "0";
     top_nav_bar.style.padding = "20px 20px 0 20px";
-
-    post_back?.style.setProperty('border-radius', '0', 'important');
-    cate_back?.style.setProperty('border-radius', '0', 'important');
-    search_back?.style.setProperty('border-radius', '0', 'important');
-    cate_wave?.style.setProperty('border-radius', '0', 'important');
     
     sidebar_Open = false;
 }
 function open_menu(){
     sidebar.style.marginLeft = "15px";
-    sidebar_on_off_btn.style.marginLeft = "-140px";
-    sidebar_area.style.display = "flex";
-    // content_area.style.width = "80%";
-    content_area.style.margin = "15px";
-    top_area.style.top = "15px";
-    top_nav_bar.style.padding = "11px 15px 0 15px";
+    applyRoundedCorners('10px');
 
-    post_back?.style.setProperty('border-radius', '10px');
-    cate_back?.style.setProperty('border-radius', '10px');
-    cate_wave?.style.setProperty('border-radius', '10px');
+    if (isCompactLayout()) {
+        sidebar_on_off_btn.style.marginLeft = "-140px";
+        sidebar_area.style.display = "none";
+        content_area.style.margin = "0";
+        top_area.style.top = "0";
+        top_nav_bar.style.padding = "20px 20px 0 20px";
+    } else {
+        sidebar_on_off_btn.style.marginLeft = "-140px";
+        sidebar_area.style.display = "flex";
+        content_area.style.margin = "15px";
+        top_area.style.top = "15px";
+        top_nav_bar.style.padding = "11px 15px 0 15px";
+    }
 
     sidebar_Open = true;
 }
