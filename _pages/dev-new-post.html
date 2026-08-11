@@ -1,0 +1,228 @@
+---
+layout: default
+title: Write Post
+permalink: /dev/new-post/
+---
+
+{% assign category_collection = site.collections | where: "label", "categories" | first %}
+{% assign category_docs = category_collection.docs | sort: "order" %}
+
+<div id="dev_post_page">
+  <div class="dev_post_page__shell">
+    <div class="dev_post_page__head">
+      <span class="dev_post_page__eyebrow">Owner Only</span>
+      <h1>Write New Post</h1>
+      <p>Create markdown post from phone browser. GitHub commit happens after submit.</p>
+    </div>
+
+    <form id="dev-post-form" class="dev_post_form">
+      <label>
+        <span>Title</span>
+        <input id="post-title" name="title" type="text" required maxlength="120">
+      </label>
+
+      <label>
+        <span>Date</span>
+        <input id="post-date" name="date" type="date" required>
+      </label>
+
+      <label>
+        <span>Top Category</span>
+        <select id="top-category" name="topCategory" required></select>
+      </label>
+
+      <label>
+        <span>Subcategory</span>
+        <select id="sub-category" name="subCategory"></select>
+      </label>
+
+      <label>
+        <span>Excerpt</span>
+        <textarea id="post-excerpt" name="excerpt" rows="3" required></textarea>
+      </label>
+
+      <label>
+        <span>Thumbnail URL</span>
+        <input id="post-thumbnail" name="thumbnail" type="url" placeholder="https://...">
+      </label>
+
+      <label>
+        <span>Tags</span>
+        <input id="post-tags" name="tags" type="text" placeholder="debug, setup, vision">
+      </label>
+
+      <label>
+        <span>Body Markdown</span>
+        <textarea id="post-body" name="body" rows="14" required placeholder="Write markdown here"></textarea>
+      </label>
+
+      <button id="post-submit" type="submit">Create Post</button>
+      <p id="dev-post-result" class="dev_post_form__result" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script id="dev-post-categories" type="application/json">
+[
+{% assign root_categories = category_docs | where_exp: "category", "category.isSub != true" %}
+{% for root in root_categories %}
+  {
+    "title": {{ root.title | jsonify }},
+    "children": [
+      {% for child_name in root.children %}
+        {{ child_name | jsonify }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+</script>
+
+<script>
+(function () {
+    const categories =
+        JSON.parse(
+            document.getElementById("dev-post-categories").textContent
+        );
+
+    const form =
+        document.getElementById("dev-post-form");
+
+    const titleInput =
+        document.getElementById("post-title");
+
+    const dateInput =
+        document.getElementById("post-date");
+
+    const topCategorySelect =
+        document.getElementById("top-category");
+
+    const subCategorySelect =
+        document.getElementById("sub-category");
+
+    const resultNode =
+        document.getElementById("dev-post-result");
+
+    setDefaultDate();
+    hydrateTopCategories();
+    topCategorySelect.addEventListener("change", hydrateSubcategories);
+    form.addEventListener("submit", submitPost);
+
+    function setDefaultDate() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        dateInput.value = year + "-" + month + "-" + day;
+    }
+
+    function hydrateTopCategories() {
+        topCategorySelect.innerHTML = "";
+
+        categories.forEach(function (category) {
+            const option = document.createElement("option");
+            option.value = category.title;
+            option.textContent = category.title;
+            topCategorySelect.appendChild(option);
+        });
+
+        const noteCategory = categories.find(function (category) {
+            return category.title === "Note";
+        });
+
+        if (noteCategory) {
+            topCategorySelect.value = noteCategory.title;
+        }
+
+        hydrateSubcategories();
+    }
+
+    function hydrateSubcategories() {
+        const selectedTopCategory = categories.find(function (category) {
+            return category.title === topCategorySelect.value;
+        });
+
+        subCategorySelect.innerHTML = "";
+
+        const emptyOption = document.createElement("option");
+        emptyOption.value = "";
+        emptyOption.textContent = "None";
+        subCategorySelect.appendChild(emptyOption);
+
+        if (!selectedTopCategory) {
+            return;
+        }
+
+        selectedTopCategory.children.forEach(function (childName) {
+            const option = document.createElement("option");
+            option.value = childName;
+            option.textContent = childName;
+            subCategorySelect.appendChild(option);
+        });
+
+        if (
+            selectedTopCategory.title === "Note" &&
+            selectedTopCategory.children.includes("Developer")
+        ) {
+            subCategorySelect.value = "Developer";
+        }
+    }
+
+    async function submitPost(event) {
+        event.preventDefault();
+
+        const payload = {
+            title: titleInput.value.trim(),
+            date: dateInput.value,
+            topCategory: topCategorySelect.value,
+            subCategory: subCategorySelect.value,
+            excerpt: document.getElementById("post-excerpt").value.trim(),
+            thumbnail: document.getElementById("post-thumbnail").value.trim(),
+            tags: document.getElementById("post-tags").value,
+            body: document.getElementById("post-body").value
+        };
+
+        setResult("Creating post...", "pending");
+
+        try {
+            const response = await fetch("/api/posts/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const responseBody = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    responseBody.message || "Create failed."
+                );
+            }
+
+            setResult(
+                "Created: " + responseBody.path,
+                "success"
+            );
+
+            document.getElementById("post-body").value = "";
+            document.getElementById("post-excerpt").value = "";
+            titleInput.value = "";
+            document.getElementById("post-tags").value = "";
+            document.getElementById("post-thumbnail").value = "";
+        }
+        catch (error) {
+            setResult(
+                error.message || "Create failed.",
+                "error"
+            );
+        }
+    }
+
+    function setResult(message, state) {
+        resultNode.textContent = message;
+        resultNode.dataset.state = state;
+    }
+})();
+</script>

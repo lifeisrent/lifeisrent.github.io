@@ -6,4 +6,19 @@
     </div>
     <h2>study notes</h2>
   </div>
+  {% assign category_collection = site.collections | where: "label", "categories" | first %}
+  {% assign dev_category = category_collection.docs | where: "title", "Developer" | first %}
+  <div class="main_content">
+    <div class="notes_shortcuts">
+      <div class="notes_shortcut notes_shortcut--dev">
+        <span class="notes_shortcut__eyebrow">Dev</span>
+        <h3>Developer Notes</h3>
+        <p>Post engineering logs, debug notes, setup memos, code review takeaways.</p>
+        <div class="notes_shortcut__actions">
+          <a class="notes_shortcut__link" href="{{ dev_category.url }}">Open Notes</a>
+          <a class="notes_shortcut__link notes_shortcut__link--primary" href="/dev/new-post/">Write Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

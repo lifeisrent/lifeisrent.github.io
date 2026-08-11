@@ -4,14 +4,19 @@ export async function onRequest(context) {
     const requestUrl =
         new URL(context.request.url);
 
-    const isProtectedPage =
+    const isSignedLinkPage =
         requestUrl.pathname.startsWith("/fridge");
 
+    const isOwnerPage =
+        requestUrl.pathname.startsWith("/dev");
+
     const isProtectedApi =
-        requestUrl.pathname.startsWith("/api/foods");
+        requestUrl.pathname.startsWith("/api/foods") ||
+        requestUrl.pathname.startsWith("/api/posts");
 
     if (
-        !isProtectedPage &&
+        !isSignedLinkPage &&
+        !isOwnerPage &&
         !isProtectedApi
     ) {
         return context.next();
@@ -25,6 +30,26 @@ export async function onRequest(context) {
         cookieHeader.includes("owner=true")
     ) {
         return context.next();
+    }
+
+    if (isOwnerPage) {
+        return Response.redirect(
+            new URL(
+                "/owner-login.html?redirect=" +
+                encodeURIComponent(requestUrl.pathname),
+                requestUrl.origin
+            ),
+            302
+        );
+    }
+
+    if (isProtectedApi) {
+        return new Response(
+            "Unauthorized",
+            {
+                status: 401
+            }
+        );
     }
 
     const expires =

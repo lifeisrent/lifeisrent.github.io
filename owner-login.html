@@ -24,6 +24,10 @@ async function login() {
     const passwordValue =
         document.getElementById("passwordInput").value;
 
+    const redirectUrl =
+        new URLSearchParams(window.location.search)
+            .get("redirect");
+
     const response =
         await fetch("/api/owner-login", {
             method: "POST",
@@ -32,7 +36,7 @@ async function login() {
 
     if (response.ok) {
         alert("Login success");
-        location.href = "/fridge/";
+        location.href = redirectUrl || "/fridge/";
     }
     else {
         alert("Wrong password");
