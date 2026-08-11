@@ -1,0 +1,7 @@
+{% assign asset_url = include.path | relative_url %}
+{% if jekyll.environment == "development" %}
+  {% assign version = site.time | date: "%s" %}
+  {{ asset_url }}?v={{ version }}
+{% else %}
+  {{ asset_url }}
+{% endif %}
