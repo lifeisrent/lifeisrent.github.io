@@ -198,6 +198,8 @@ function buildMarkdown(input) {
         "---",
         'title: "' + escapeDoubleQuotes(input.title) + '"',
         'excerpt: "' + escapeDoubleQuotes(input.excerpt) + '"',
+        "layout: post",
+        "date: " + input.postDate + " 00:00:00 +0900",
         "categories:"
     ];
 
